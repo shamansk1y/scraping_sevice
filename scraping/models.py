@@ -1,5 +1,5 @@
 from django.db import models
-from scraping.utils import from_cyrillic_to_eng
+from .utils import from_cyrillic_to_eng
 
 
 # Create your models here.
