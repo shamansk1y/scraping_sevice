@@ -10,7 +10,7 @@ import django
 django.setup()
 
 from scraping.parsers import *
-from scraping.models import Vacancy, City, Language
+from scraping.models import Vacancy, City, Language, Error
 
 parsers = (
     (work, 'https://www.work.ua/jobs-kyiv-python/'),
@@ -34,6 +34,9 @@ for job in jobs:
         v.save()
     except DatabaseError:
         pass
+
+if errors:
+    er = Error(data=errors).save()
 
 # h = codecs.open('work.txt', 'w', 'utf-8')
 # h.write(str(jobs))
