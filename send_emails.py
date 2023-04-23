@@ -13,10 +13,10 @@ django.setup()
 from scraping.models import Vacancy, Error, Url
 from src.settings import (
     EMAIL_HOST_USER,
-    EMAIL_HOST, EMAIL_HOST_PASSWORD
+    EMAIL_HOST, EMAIL_HOST_PASSWORD, EMAIL_ERROR
 )
 
-ADMIN_USER = EMAIL_HOST_USER
+ADMIN_USER = EMAIL_ERROR
 
 today = datetime.date.today()
 subject = f"Рассылка вакансий за {today}"
